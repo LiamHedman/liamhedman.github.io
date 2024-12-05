@@ -1,8 +1,17 @@
-# brollopshemsida
-Detta är en hemsida med information för gästerna till Ella och Liams bröllop juli 2025.
+# Bröllopshemsida
+
+Detta är github-repot för en hemsida med information för gästerna till Ella och Liams bröllop juli 2025.
+
+## Filer i detta repo
 
 Använd följande filer för:
 
-index.html: Din huvudsakliga hemsida.
-style.css: Styla hemsidan.
-script.js: Lägg till JavaScript (om du behöver det).
+- index.html: Den uvudsakliga hemsidan.
+
+- style.css: Styla hemsidan.
+
+- script.js: Lägg till JavaScript (om det behövs).
+
+## Länk till google-formulär för OSA
+
+- <https://forms.gle/ueBU4RjscVokcYJCA>
