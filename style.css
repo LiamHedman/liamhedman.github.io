@@ -1,20 +1,56 @@
-.form-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+    background-image: url(Banderoll.png);
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+.content {
+
+    width: 100vw auto;
+    margin-top: 25vw;
+    background-color: white;
+    border-radius: calc(2vw);
+    padding-top: calc(100vh / 85);
+    padding-bottom: 100vw;
+    box-shadow: 0 -30px 60px rgba(0, 0, 0, .7);
+    text-align: center;
+    position: sticky;
+    top: 0;
 }
 
 h1 {
     text-align: center;
-    color: #5a5a5a;
+    color: black;
+    font-size: 3vw;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 90;
+    font
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 p {
     text-align: center;
+    font-size: 1.2vw;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+button:hover {
+    background-color:rgb(255, 176, 197); /* Ändra färg vid hover */
+}
+
+.form-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

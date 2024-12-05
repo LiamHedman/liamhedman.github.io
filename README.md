@@ -2,7 +2,9 @@
 
 Detta är github-repot för en hemsida med information för gästerna till Ella och Liams bröllop juli 2025.
 
-## Filer i detta repo
+##
+
+### Filer i detta repo
 
 Använd följande filer för:
 
@@ -12,6 +14,6 @@ Använd följande filer för:
 
 - script.js: Lägg till JavaScript (om det behövs).
 
-## Länk till google-formulär för OSA
+### Länk till google-formulär för OSA
 
 - <https://forms.gle/ueBU4RjscVokcYJCA>
