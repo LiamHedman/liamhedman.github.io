@@ -156,13 +156,13 @@ a {
 
     .content {
         background-color: rgb(255, 249, 249);
-        place-content: top;
-        place-items: top;
+        place-content: top center;
+        place-items: top center;
         min-height: 100vh;
         box-shadow: 0 -10px 20px rgba(0, 0, 0, .3);
         margin-top: 0;
         position: relative;
-        top: 25vh;
+        top: 250px;
         border-radius: 0;
         z-index: 0;
     }
@@ -214,25 +214,31 @@ a {
     }
 
     .menu-container {
-        position: relative;
+        place-self: top center;
+        position: fixed;
         background-color: rgb(255, 249, 249);
-        box-shadow: rgba(0, 0, 0, .3);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
         width: 100vw;
-        height: 28.5px;
-        position: sticky;
+        height: 54px;
+        /* position: sticky; */
         top: 0;
         z-index: 5;
     }
 
     .menu-button {
         position: absolute;
+        place-self: left;
         font-size: 30px;
         padding: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
         border-radius: 0;
         box-shadow: 0 0 3px rgba(0, 0, 0, .4);
         text-decoration: none;
+    }
+
+    .initialer {
+        font-family: "MonteCarlo", cursive;
     }
 
     .side-menu {
