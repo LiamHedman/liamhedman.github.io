@@ -271,6 +271,9 @@ a {
 
     .textContainer {
         place-self: center;
+        place-content: center;
+        place-items: center;
+        fon
         width: 75vw;
         font-size: 12px;
     }
