@@ -3,7 +3,7 @@
 
 /*För webbläsare på dator*/
 body {
-    background-image: url(images/träd-mellan.jpg);
+    background-image: url(images/kramas-zoom.JPG);
     background-size: contain;
     background-attachment: fixed;
     background-position: center -250px;
@@ -150,10 +150,10 @@ a {
 @media (max-width: 768px) {
 
     body {
-        background-image: url(images/träd-mellan.jpg);
+        background-image: url(images/kramas-zoom.JPG);
         background-size: contain;
         background-attachment: fixed;
-        background-position: center -130px;
+        background-position: center -30px;
         background-repeat: no-repeat;
         font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
@@ -177,7 +177,7 @@ a {
         place-items: top center;
         position: relative;
         text-align: center;
-        top: 250px;
+        top: 270px;
         width: 100vw auto;
         z-index: 0;
     }
