@@ -182,8 +182,41 @@ a {
         z-index: 0;
     }
 
+    .floating-img-l {
+        position: absolute;
+        /* Gör bilden oberoende av andra element */
+        top: 10px;
+        /* Justera positionen från toppen av div */
+        left: 10px;
+        /* Justera positionen från höger */
+        width: 140px;
+        /* Bestäm bildens storlek */
+        height: auto;
+        /* Behåll proportioner */
+        z-index: 1;
+        /* Säkerställ att bilden inte göms av andra element */
+    }
+
+    .floating-img-r {
+        position: absolute;
+        /* Gör bilden oberoende av andra element */
+        top: 10px;
+        /* Justera positionen från toppen av div */
+        right: 10px;
+        /* Justera positionen från höger */
+        width: 140px;
+        /* Bestäm bildens storlek */
+        height: auto;
+        /* Behåll proportioner */
+        z-index: 1;
+        /* Säkerställ att bilden inte göms av andra element */
+    }
+
     .header {
-        place-self: top center;
+        position: absolute;
+        place-self: center;
+        margin: 0;
+        top: 60px;
     }
 
     h1 {
@@ -235,20 +268,21 @@ a {
         box-shadow: 0 0 10px rgba(0, 0, 0, .3);
         width: 100vw;
         height: 54px;
-        /* position: sticky; */
+        text-decoration: none;
         top: 0;
         z-index: 5;
     }
 
     .menu-button {
-        position: absolute;
-        place-self: left;
+        border-radius: 0;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
         font-size: 30px;
         padding: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        border-radius: 0;
-        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+        place-self: left;
+        position: absolute;
+        size: inherit;
         text-decoration: none;
     }
 
@@ -265,11 +299,11 @@ a {
         padding-top: 5px;
         transition: left 0.3s ease;
         overflow-y: auto;
-
         width: 50vw;
         height: 100vh;
         margin: 0;
         box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+        text-decoration: none;
         z-index: 100;
     }
 
