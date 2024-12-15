@@ -1,6 +1,6 @@
 # Bröllopshemsida
 
-Detta är github-repot för en hemsida med information för gästerna till Ella och Liams bröllop juli 2025.
+Detta är github-repot för en hemsida med information för gästerna till Ella och Liams bröllop juli 2025. Hemsidan ska visas i en webbläsare på en mobil.
 
 ##
 
