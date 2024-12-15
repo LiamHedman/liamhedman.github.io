@@ -57,6 +57,12 @@ p1 {
     font-family: "MonteCarlo", cursive;
 }
 
+p2 {
+    text-align: center;
+    font-size: 25px;
+    font-family: "MonteCarlo", cursive;
+}
+
 p {
     text-align: center;
     margin: 8px;
@@ -102,9 +108,7 @@ button {
 
 button:hover {
     background-color: azure;
-    border-radius: 15px;
-    padding-right: 10px;
-    padding-left: 10px;
+    border-radius: 0;
 }
 
 .form-link {
@@ -184,32 +188,29 @@ a {
 
     .floating-img-l {
         position: absolute;
-        /* Gör bilden oberoende av andra element */
         top: 10px;
-        /* Justera positionen från toppen av div */
         left: 10px;
-        /* Justera positionen från höger */
         width: 140px;
-        /* Bestäm bildens storlek */
         height: auto;
-        /* Behåll proportioner */
         z-index: 1;
-        /* Säkerställ att bilden inte göms av andra element */
     }
 
     .floating-img-r {
         position: absolute;
-        /* Gör bilden oberoende av andra element */
         top: 10px;
-        /* Justera positionen från toppen av div */
         right: 10px;
-        /* Justera positionen från höger */
         width: 140px;
-        /* Bestäm bildens storlek */
         height: auto;
-        /* Behåll proportioner */
         z-index: 1;
-        /* Säkerställ att bilden inte göms av andra element */
+    }
+
+    .floating-img1 {
+        position: absolute;
+        place-self: center;
+        bottom: 0;
+        width: 50vw;
+        height: auto;
+        z-index: 1;
     }
 
     .header {
@@ -224,20 +225,16 @@ a {
         font-weight: 90;
     }
 
-    h2 {
-        text-align: center;
-        padding-top: 0%;
-        color: black;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: 90;
-        margin-top: 0;
-        margin-bottom: 10px;
-        justify-content: center;
-        align-items: center;
+    p1 {
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
     }
 
-    p1 {
-        font-size: 8vw;
+    p2 {
+        font-size: 30px;
+        margin-top: 0;
+        padding: 0;
     }
 
     p {
@@ -259,6 +256,7 @@ a {
 
     button {
         font-size: 5vw;
+        margin: 0;
     }
 
     .menu-container {
@@ -274,20 +272,38 @@ a {
     }
 
     .menu-button {
+        background-color: rgb(255, 249, 249);
         border-radius: 0;
-        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0);
         font-size: 30px;
+        max-height: inherit;
         padding: 5px;
         padding-left: 15px;
         padding-right: 15px;
         place-self: left;
         position: absolute;
-        size: inherit;
+        size: inherit - 1;
         text-decoration: none;
+        color: black;
+    }
+
+    .osa-button {
+        background-color: rgb(255, 249, 249);
+        border-radius: 0;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+        margin-top: 50px;
+    }
+
+    button {
+        background-color: rgb(255, 249, 249);
+        border-radius: 0;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .7);
     }
 
     .initialer {
         font-family: "MonteCarlo", cursive;
+        font-size: 30px;
+        margin: 0;
     }
 
     .side-menu {
@@ -319,11 +335,15 @@ a {
     }
 
     .textContainer {
+
+        border-top: 1px solid black;
+        font-size: 12px;
+        margin-bottom: 0;
         place-self: center;
         place-content: center;
         place-items: center;
         width: 75vw;
-        font-size: 12px;
+        height: 10px;
     }
 
     .container {
@@ -347,8 +367,6 @@ a {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 5;
-        /* Lägre än menyns z-index */
         display: none;
-        /* Börja som dold */
     }
 }
