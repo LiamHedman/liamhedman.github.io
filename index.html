@@ -22,20 +22,26 @@
         <button class="menu-button" onclick="toggleMenu()">☰</button>
         <p class="initialer">Ella & Liam</p>
 
-        <div class="side-menu" id="sideMenu">
-            <a href="index.html">
+        <div class="side-menu" id="sideMenu" onclick="toggleMenu()">
+            <a href="#hem">
                 <div class="nav_button">HEM</div>
             </a>
-            <a href="osa.html">
+            <a href="#osa">
                 <div class="nav_button">OSA</div>
             </a>
-            <a href="plats.html">
-                <div class="nav_button">TID OCH ADRESS</div>
+            <a href="#vigsel">
+                <div class="nav_button">VIGSEL</div>
             </a>
-            <a href="OmOss.html">
-                <div class="nav_button">OM OSS</div>
+            <a href="#fest">
+                <div class="nav_button">BRÖLLOPSFEST</div>
             </a>
-            <a href="kontakt.html">
+            <a href="#tema">
+                <div class="nav_button">TEMA</div>
+            </a>
+            <a href="#önskelista">
+                <div class="nav_button">ÖNSKELISTA</div>
+            </a>
+            <a href="#kontakt">
                 <div class="nav_button">KONTAKT</div>
             </a>
         </div>
@@ -46,9 +52,8 @@
 
         <img src="images/pink-flowers/pink-flowers-upper-left-corner.png" alt="uppe-vänster" class="floating-img-l">
         <img src="images/pink-flowers/pink-flowers-upper-right-corner.png" alt="uppe-höger" class="floating-img-r">
-        <!-- <img src="images/pink-flowers/light-pink-flower-borber.png" alt="light-pink" class="floating-img1"> -->
 
-        <section>
+        <section id="hem">
 
             <div class="header">
                 <h1>Vi ska gifta oss!</h1>
@@ -67,85 +72,163 @@
             <section class="section_block">
                 <p id="intro_text" class="ocentrerad_text">På den här sidan finns all viktig information ni
                     behöver känna till inför vårt bröllop. Allt från detaljer om tid och plats till
-                    praktisk information om ceremonin och festen. Sidan är gjord av Liam.
+                    praktisk information om ceremonin och festen. Sidan har jag själv, Liam, programmerat.
                 </p>
             </section>
 
         </section>
 
-        <section>
+        <section id="vigsel">
 
             <h2>Vigsel</h2>
             <section class="section_block">
                 <img src="images/2025-01-18.png" id="funbo_kyrka" alt="funbo kyrka">
                 <h2>Funbo Kyrka</h2>
+                <p class="ocentrerad_text">
+                    Vigselceremonin äger rum i Funbo kyrka den 5 juli 2025 kl. 14:00.
+                    Efter ceremonin är alla som deltar varmt välkomna på kaffe och
+                    fika i församlingshemmet, som ligger precis intill kyrkan. Klicka
+                    på kartan nedan för att se vägbeskrivning till kyrkan.
+                </p>
+                <br>
+                <br>
+                <a href="https://maps.app.goo.gl/wF9w8SLWRGYgUkGn6">
+                    <img src="images/funbo_karta.png" id="funbo_karta" alt="funbo kyrka på karta">
+                </a>
             </section>
         </section>
 
-        <section>
+        <section id="fest">
 
             <h2>Bröllopsfest</h2>
             <section class="section_block">
                 <img src="images/länna_gård.jpeg" id="länna_gård" alt="länna gård">
                 <h2>Länna gård</h2>
+                <p class="ocentrerad_text">
+                    Efter kyrkfikat fortsätter vi att fira på Länna gård, där
+                    bröllopsfesten äger rum. Om du har hittat till denna webbsida
+                    är du troligtvis bjuden till festen, men om du är osäker - dubbelkolla
+                    gärna inbjudningskortet du fått. Klicka på kartan nedan för att se
+                    vägbeskrivning till gården.
+                </p>
+                <br>
+                <br>
+                <a href="https://maps.app.goo.gl/MCUuZuAM3LK6BM457">
+                    <img src="images/länna_karta.png" id="länna_karta" alt="länna gård på karta">
+                </a>
             </section>
         </section>
 
-        <section>
+        <section id="tema">
 
             <h2>Tema och klädkod</h2>
             <section class="section_block">
+                <img id="kostymer" src="images/kostymer.JPG" alt="herrar i kostymer">
                 <h2>Klädkod - Kavaj</h2>
                 <p id="klädkod_text" class="ocentrerad_text">
                     <strong>Herrar: </strong> <br>
-                    Bär en kostym eller udda kavaj och byxor i valfria färger. För att följa temat pastellfärger
-                    kan du välja en passande skjorta, slips eller fluga. <br><br>
+                    Bär en kostym eller udda kavaj och byxor i valfria färger. För att följa temat,
+                    som är pastellfärger, kan du välja en passande skjorta, slips eller fluga. <br><br>
                     <strong>Damer: </strong> <br>
                     För damer innebär kädkoden en elegant klänning, kjol eller byxdress i pastellfärger
-                    eller liknande. Undvik allt för starka färger och ha förståss inte en vit klänning,
+                    eller liknande. Ha förståss inte en vit klänning,
                     då tror kanske någon att du är bruden! <br>
                 </p>
+                <br>
+                <img src="images/pastell.jpg" alt="pastellfärger" id="pastell">
             </section>
         </section>
 
-        <section>
+        <section id="kontakt">
 
             <h2>Kontakt</h2>
             <section class="section_block">
                 <h2>Tal och spex</h2>
+
+                <button id="spex_button" class="send-button" onclick="toggleForm()">Visa formulär</button>
+
+                <br>
+                <form id="spex_form" action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
+                    <br>
+                    <input placeholder="För och efternamn" type="text" name="name" required><br><br>
+                    <input placeholder="E-post" type="email" name="email" required><br><br>
+                    <input placeholder="Telefonnummer" type="tel" name="number" required><br><br>
+                    <input placeholder="Specialkost" type="text" name="Specialkost"><br>
+                    <p class="ocentrerad_text">Kommer du att kunna delta?</p>
+                    <br>
+                    <div class="radio">
+                        <input type="radio" id="ja" name="osa" value="ja">
+                        <label for="ja">Ja, jag kommer</label><br><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="nej" name="osa" value="nej">
+                        <label for="nej">Nej, tyvärr inte</label><br><br>
+                    </div>
+                    <button class="send-button" type="submit">SKICKA</button><br>
+                </form>
+
+
             </section>
         </section>
 
-        <section>
+        <section id="önskelista">
 
-            <h2></h2>
+            <h2>Önskelista</h2>
             <section class="section_block">
-
+                <p class="ocentrerad_text">
+                    Som studenter är vi förstås ekonomiskt oberoende och har allt vi behöver redan.
+                </p>
             </section>
         </section>
 
-        <section>
+        <br><br><br>
+        <section class="section_block">
+            <img src="images/valv_tittar_symetrisk.jpg" alt="tittar på varandra" id="valv_tittar">
+        </section>
+
+        <section id="osa">
 
             <h2>OSA</h2>
             <section class="section_block">
-                <form action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
-                    <input placeholder="För och efternamn" type="text" name="name" required><br>
-                    <input placeholder="E-post" type="email" name="email" required><br>
-                    <input placeholder="Telefonnummer" type="tel" name="number" required><br>
+                <br>
+                <p class="ocentrerad_text">
+                    Fyll i formuläret nedan för att berätta om du kommer. Om du är allergisk
+                    eller vegetarian etc. så kan du skriva det i den sista rutan.
+                    Lämna även OSA för dina barn om de kommer, du behöver ej lämna
+                    för eventuella spädbarn.
+                    <br>
+                    <br>
+                </p>
+
+                <button id="osa_button" class="send-button" onclick="toggleForm()">Visa formulär</button>
+
+                <br>
+                <form id="osa_form" action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
+                    <br>
+                    <input placeholder="För och efternamn" type="text" name="name" required><br><br>
+                    <input placeholder="E-post" type="email" name="email" required><br><br>
+                    <input placeholder="Telefonnummer" type="tel" name="number" required><br><br>
                     <input placeholder="Specialkost" type="text" name="Specialkost"><br>
-                    <input type="radio" id="ja" name="osa" value="ja">
-                    <label for="ja">Ja, jag kommer</label><br>
-                    <input type="radio" id="nej" name="osa" value="nej">
-                    <label for="nej">Nej, jag kommer tyvärr inte</label><br>
-                    <button type="submit">Skicka</button><br>
+                    <p class="ocentrerad_text">Kommer du att kunna delta?</p>
+                    <br>
+                    <div class="radio">
+                        <input type="radio" id="ja" name="osa" value="ja">
+                        <label for="ja">Ja, jag kommer</label><br><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="nej" name="osa" value="nej">
+                        <label for="nej">Nej, tyvärr inte</label><br><br>
+                    </div>
+                    <button class="send-button" type="submit">SKICKA</button><br>
                 </form>
             </section>
 
-            <!-- <div class="form-link">
-                <div class="osa-button" href="https://forms.gle/ueBU4RjscVokcYJCA" target="_blank">
-                    <button>OSA här</button>
-                </div>
-            </div> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="images/pink-flowers/light-pink-flower-borber.png" alt="light-pink" class="floating-img1">
 
         </section>
 

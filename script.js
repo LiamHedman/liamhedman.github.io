@@ -18,6 +18,20 @@ function hideMenu(menu) {
     }
 }
 
+function toggleForm() {
+    const form = document.getElementById('osa_form');
+    const button = document.getElementById('osa_button');
+    form.classList.toggle('open'); // Lägg till/ta bort klassen "open"
+    button.classList.toggle('open'); // Lägg till/ta bort klassen "open"
+    button.style.opacity = "0"; 
+
+    const s_form = document.getElementById('spex_form');
+    const s_button = document.getElementById('spex_button');
+    s_form.classList.toggle('open'); // Lägg till/ta bort klassen "open"
+    s_button.classList.toggle('open'); // Lägg till/ta bort klassen "open"
+    s_button.style.opacity = "0"; 
+}
+
 // Kör när sidan har laddats
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
