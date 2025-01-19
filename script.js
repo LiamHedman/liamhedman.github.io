@@ -1,3 +1,4 @@
+// För öppning och stängning av sidomenyn
 function toggleMenu() {
     const menu = document.getElementById("sideMenu");
     if (menu.style.left === "0px") {
@@ -9,6 +10,7 @@ function toggleMenu() {
     }
 }
 
+// För stängning av sidomenyn
 function hideMenu(menu) {
     if (menu.style.left === "0px") {
         menu.style.left = "-250px"; // Dölj menyn
@@ -16,6 +18,25 @@ function hideMenu(menu) {
     }
 }
 
+// Kör när sidan har laddats
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    const content = document.getElementById("body");
+
+    // Lägg till en fade-out-klass
+    this.setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.transition = "opacity 1.0s ease";
+
+        // Vänta tills animationen är klar och ta bort preloader
+        setTimeout(() => {
+            preloader.style.display = "none";
+            content.style.display = "block"; // Visa huvudinnehållet
+        }, 500); // Matchar fade-tiden
+    }, 500)
+});
+
+// För att stänga sidomenyn när användaren klickar utanför menyn
 document.addEventListener("click", function (event) {
     const menu = document.getElementById("sideMenu");
     const button = document.querySelector(".menu-button");

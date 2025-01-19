@@ -1,4 +1,8 @@
 # Att göra
 
-- Hitta snyggt typsnitt till initialer
-- Fixa innehåll
+- Låsa laddskärmen
+- Fixa att hela sidan syns
+- Testa formuläret
+- Fylla sidan med text
+- Fylla sidan med bilder
+- Fixa hemsida för dator

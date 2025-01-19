@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ellas och Liams bröllopshemsida</title>
+    <link rel="icon" href="images/heart-icon.webp" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
-<body>
+<body id="body">
+    <div id="preloader">
+        <img src="images/heart-icon.webp" alt="Loading Icon" id="preloader-icon">
+    </div>
+
+
     <div class="overlay" id="overlay"></div>
 
     <div class="menu-container">
@@ -18,19 +24,19 @@
 
         <div class="side-menu" id="sideMenu">
             <a href="index.html">
-                <div class="topButton">HEM</div>
+                <div class="nav_button">HEM</div>
             </a>
             <a href="osa.html">
-                <div class="topButton">OSA</div>
+                <div class="nav_button">OSA</div>
             </a>
             <a href="plats.html">
-                <div class="topButton">TID OCH ADRESS</div>
+                <div class="nav_button">TID OCH ADRESS</div>
             </a>
             <a href="OmOss.html">
-                <div class="topButton">OM OSS</div>
+                <div class="nav_button">OM OSS</div>
             </a>
             <a href="kontakt.html">
-                <div class="topButton">KONTAKT</div>
+                <div class="nav_button">KONTAKT</div>
             </a>
         </div>
 
@@ -40,24 +46,108 @@
 
         <img src="images/pink-flowers/pink-flowers-upper-left-corner.png" alt="uppe-vänster" class="floating-img-l">
         <img src="images/pink-flowers/pink-flowers-upper-right-corner.png" alt="uppe-höger" class="floating-img-r">
-        <img src="images/pink-flowers/light-pink-flower-borber.png" alt="light-pink" class="floating-img1">
+        <!-- <img src="images/pink-flowers/light-pink-flower-borber.png" alt="light-pink" class="floating-img1"> -->
 
-        <div class="header">
+        <section>
 
-            <h1>Vi ska gifta oss!</h1>
-            <p1>5e juli 2025<br></p1>
-            <p1>Funbo kyrka, Uppsala<br></p1>
-            
-            <div class="textContainer">
-                <p>Vi ser fram emot att dela denna speciella dag med dig</p>
+            <div class="header">
+                <h1>Vi ska gifta oss!</h1>
+                <p class="subtitle">5e juli 2025<br></p>
             </div>
-            
-            <div class="form-link">
-                <a class="osa-button" href="https://forms.gle/ueBU4RjscVokcYJCA" target="_blank">
+
+            <div>
+                <p class="centrerad_text">Vi ser fram emot att dela denna speciella dag med dig!</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Välkommen!</h2>
+            <section class="section_block">
+                <p id="intro_text" class="ocentrerad_text">På den här sidan finns all viktig information ni
+                    behöver känna till inför vårt bröllop. Allt från detaljer om tid och plats till
+                    praktisk information om ceremonin och festen. Sidan är gjord av Liam.
+                </p>
+            </section>
+
+        </section>
+
+        <section>
+
+            <h2>Vigsel</h2>
+            <section class="section_block">
+                <img src="images/2025-01-18.png" id="funbo_kyrka" alt="funbo kyrka">
+                <h2>Funbo Kyrka</h2>
+            </section>
+        </section>
+
+        <section>
+
+            <h2>Bröllopsfest</h2>
+            <section class="section_block">
+                <img src="images/länna_gård.jpeg" id="länna_gård" alt="länna gård">
+                <h2>Länna gård</h2>
+            </section>
+        </section>
+
+        <section>
+
+            <h2>Tema och klädkod</h2>
+            <section class="section_block">
+                <h2>Klädkod - Kavaj</h2>
+                <p id="klädkod_text" class="ocentrerad_text">
+                    <strong>Herrar: </strong> <br>
+                    Bär en kostym eller udda kavaj och byxor i valfria färger. För att följa temat pastellfärger
+                    kan du välja en passande skjorta, slips eller fluga. <br><br>
+                    <strong>Damer: </strong> <br>
+                    För damer innebär kädkoden en elegant klänning, kjol eller byxdress i pastellfärger
+                    eller liknande. Undvik allt för starka färger och ha förståss inte en vit klänning,
+                    då tror kanske någon att du är bruden! <br>
+                </p>
+            </section>
+        </section>
+
+        <section>
+
+            <h2>Kontakt</h2>
+            <section class="section_block">
+                <h2>Tal och spex</h2>
+            </section>
+        </section>
+
+        <section>
+
+            <h2></h2>
+            <section class="section_block">
+
+            </section>
+        </section>
+
+        <section>
+
+            <h2>OSA</h2>
+            <section class="section_block">
+                <form action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
+                    <input placeholder="För och efternamn" type="text" name="name" required><br>
+                    <input placeholder="E-post" type="email" name="email" required><br>
+                    <input placeholder="Telefonnummer" type="tel" name="number" required><br>
+                    <input placeholder="Specialkost" type="text" name="Specialkost"><br>
+                    <input type="radio" id="ja" name="osa" value="ja">
+                    <label for="ja">Ja, jag kommer</label><br>
+                    <input type="radio" id="nej" name="osa" value="nej">
+                    <label for="nej">Nej, jag kommer tyvärr inte</label><br>
+                    <button type="submit">Skicka</button><br>
+                </form>
+            </section>
+
+            <!-- <div class="form-link">
+                <div class="osa-button" href="https://forms.gle/ueBU4RjscVokcYJCA" target="_blank">
                     <button>OSA här</button>
-                </a>
-            </div>
-        </div>
+                </div>
+            </div> -->
+
+        </section>
 
     </div>
 </body>
