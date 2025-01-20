@@ -103,12 +103,14 @@
 
     form {
         max-height: 0; /* Dölj formuläret initialt */
+        opacity: 0;
         overflow: hidden; /* Dölj innehåll utanför den synliga ytan */
         transition: max-height 1.0s ease-out; /* Lägg till en mjuk rull-effekt */
         display: flex;
         flex-direction: column;
         border: none;
         border-top: solid 3px rgb(212, 162, 186);
+        border-bottom: solid 3px rgb(212, 162, 186);
         max-width: 80vw;
         text-align: left;
         padding: 20px;
@@ -119,11 +121,13 @@
     }
 
     #osa_form.open {
+        opacity: 100;
         max-height: 200vw; 
         padding: 15px;
     }
 
     #spex_form.open {
+        opacity: 100;
         max-height: 200vw; 
         padding: 15px;
     }
@@ -144,7 +148,7 @@
     }
 
     input::placeholder {
-        color: black;
+        color:rgb(77, 77, 77);
     }
 
     input:focus {
@@ -209,15 +213,6 @@
         margin: 0;
         font-family: "MonteCarlo", cursive;
         font-size: 35px;
-        padding: 0;
-        text-align: center;
-    }
-
-    p2 {
-        position: relative;
-        font-family: "MonteCarlo", cursive;
-        font-size: 30px;
-        margin-top: 0;
         padding: 0;
         text-align: center;
     }
@@ -305,7 +300,6 @@
         margin: 0;
         font-family: 'Times New Roman', Times, serif;
         background-color: white;
-        border-radius: 0;
         box-shadow: 0 0 3px rgba(0, 0, 0, .7);
         color: black;
         text-decoration: none;
@@ -314,7 +308,6 @@
 
     .menu-button {
         background-color: white;
-        border-radius: 0;
         border-color: transparent;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0);
         font-size: 30px;
@@ -327,20 +320,31 @@
         size: inherit - 1;
         text-decoration: none;
         color: black;
-        z-index: 2;
+        z-index: 101;
     }
 
     #osa_button.open {
-        max-height: 0;
         overflow: hidden;
     }
 
     #spex_button.open {
-        max-height: 0;
         overflow: hidden;
     }
 
     .send-button {
+        background-color: white;
+        border-radius: 0;
+        border-style: outset;
+        border-color: rgb(212, 162, 186);
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        color: black;
+        padding: 5px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .open-form-button {
+        width: 90%;
         background-color: white;
         border-radius: 0;
         border-style: outset;
@@ -474,5 +478,14 @@
     50% {
         transform: scale(1.2);
         /* Förstoras något */
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
     }
 }

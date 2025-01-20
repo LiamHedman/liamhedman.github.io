@@ -19,15 +19,13 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="menu-container">
-        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <button class="menu-button" id="m_button" onclick="toggleMenu()">☰</button>
         <p class="initialer">Ella & Liam</p>
 
         <div class="side-menu" id="sideMenu" onclick="toggleMenu()">
+            <br><br><br>
             <a href="#hem">
                 <div class="nav_button">HEM</div>
-            </a>
-            <a href="#osa">
-                <div class="nav_button">OSA</div>
             </a>
             <a href="#vigsel">
                 <div class="nav_button">VIGSEL</div>
@@ -38,11 +36,14 @@
             <a href="#tema">
                 <div class="nav_button">TEMA</div>
             </a>
+            <a href="#kontakt">
+                <div class="nav_button">KONTAKT</div>
+            </a>
             <a href="#önskelista">
                 <div class="nav_button">ÖNSKELISTA</div>
             </a>
-            <a href="#kontakt">
-                <div class="nav_button">KONTAKT</div>
+            <a href="#osa">
+                <div class="nav_button">OSA</div>
             </a>
         </div>
 
@@ -72,7 +73,10 @@
             <section class="section_block">
                 <p id="intro_text" class="ocentrerad_text">På den här sidan finns all viktig information ni
                     behöver känna till inför vårt bröllop. Allt från detaljer om tid och plats till
-                    praktisk information om ceremonin och festen. Sidan har jag själv, Liam, programmerat.
+                    praktisk information om ceremonin och festen.
+                    <br><br>
+                    Sidan har jag, Liam, programmerat. Om något inte fungerar som det ska,
+                    eller om ni har andra frågor, så är ni välkomna att kontakta mig.
                 </p>
             </section>
 
@@ -144,29 +148,64 @@
             <h2>Kontakt</h2>
             <section class="section_block">
                 <h2>Tal och spex</h2>
+                <p class="ocentrerad_text">
+                    Vill du hålla ett tal eller bjuda på ett spex under bröllopsfesten så
+                    får du gärna fylla i formuläret nedan. <br><br>
 
-                <button id="spex_button" class="send-button" onclick="toggleForm()">Visa formulär</button>
+                    För att tiden ska räcka till alla som vill bidra,
+                    ber vi dig försöka hålla din aktivitet under 10 minuter. <br><br>
+
+                    Vid frågor kring tal och spex kan du kontakta våra fantastiska toastmasters,
+                    Philip och Jennifer:
+                    <br><br>
+                    <strong>Philip:</strong><br>
+                    072-307 57 74
+                    <br><br>
+                    <strong>Jennifer:</strong><br>
+                    076-416 78 71
+                    <br><br>
+                    Brudparet ser inte vad du skriver i formuläret, det skickas direkt till våra toastmasters.
+                    <br><br><br><br>
+                </p>
+
+                <button id="spex_button" class="open-form-button" onclick="toggleForm(0)">Visa formulär</button>
 
                 <br>
-                <form id="spex_form" action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
+                <form id="spex_form" action="https://formsubmit.co/philipochjennifer@gmail.com" method="POST"
+                    autocomplete="on">
                     <br>
-                    <input placeholder="För och efternamn" type="text" name="name" required><br><br>
-                    <input placeholder="E-post" type="email" name="email" required><br><br>
-                    <input placeholder="Telefonnummer" type="tel" name="number" required><br><br>
-                    <input placeholder="Specialkost" type="text" name="Specialkost"><br>
-                    <p class="ocentrerad_text">Kommer du att kunna delta?</p>
+                    <p class="ocentrerad_text">Ditt namn:</p>
+                    <input placeholder="För och efternamn" type="text" name="name" required><br>
+
+                    <p class="ocentrerad_text">Din mailadress:</p>
+                    <input placeholder="E-post" type="email" name="email" required><br>
+
+                    <p class="ocentrerad_text">Ditt telefonnummer:</p>
+                    <input placeholder="Telefonnummer" type="tel" name="number" required><br>
+
+                    <p class="ocentrerad_text">Vad ska du göra? (Tal, spex, <br>visa video):</p>
+                    <input placeholder="Aktivitet" type="text" name="Aktivitet"><br>
+
+                    <p class="ocentrerad_text">Behöver du något? (Projektor, scen, mikrofon):</p>
+                    <input placeholder="Rekvesita" type="text" name="Rekvesita"><br>
+
+                    <p class="ocentrerad_text">Hur lång tid kommer det att ta?</p>
+                    <input placeholder="Tidsåtgång" type="text" name="Tidsåtgång"><br>
                     <br>
-                    <div class="radio">
-                        <input type="radio" id="ja" name="osa" value="ja">
-                        <label for="ja">Ja, jag kommer</label><br><br>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" id="nej" name="osa" value="nej">
-                        <label for="nej">Nej, tyvärr inte</label><br><br>
-                    </div>
                     <button class="send-button" type="submit">SKICKA</button><br>
                 </form>
 
+                <br><br>
+                <p class="ocentrerad_text">
+                    Har du frågor om annat är du självklart välkommen att kontakta brudparet direkt:
+                    <br><br>
+                    <strong>Ella:</strong><br>
+                    076-188 61 46
+                    <br><br>
+                    <strong>Liam:</strong><br>
+                    072-548 85 57
+                    <br><br>
+                </p>
 
             </section>
         </section>
@@ -176,7 +215,7 @@
             <h2>Önskelista</h2>
             <section class="section_block">
                 <p class="ocentrerad_text">
-                    Som studenter är vi förstås ekonomiskt oberoende och har allt vi behöver redan.
+                    Som studenter är vi förstås ekonomiskt oberoende och har redan allt vi behöver.
                 </p>
             </section>
         </section>
@@ -194,21 +233,27 @@
                 <p class="ocentrerad_text">
                     Fyll i formuläret nedan för att berätta om du kommer. Om du är allergisk
                     eller vegetarian etc. så kan du skriva det i den sista rutan.
-                    Lämna även OSA för dina barn om de kommer, du behöver ej lämna
+                    Lämna även separat OSA för dina barn om de kommer, du behöver ej lämna OSA
                     för eventuella spädbarn.
+                    <br>
+                    <br>
                     <br>
                     <br>
                 </p>
 
-                <button id="osa_button" class="send-button" onclick="toggleForm()">Visa formulär</button>
+                <button id="osa_button" class="send-button" onclick="toggleForm(1)">Visa formulär</button>
 
                 <br>
                 <form id="osa_form" action="https://formsubmit.co/liamhedman@gmail.com" method="POST" autocomplete="on">
                     <br>
                     <input placeholder="För och efternamn" type="text" name="name" required><br><br>
+
                     <input placeholder="E-post" type="email" name="email" required><br><br>
+
                     <input placeholder="Telefonnummer" type="tel" name="number" required><br><br>
+
                     <input placeholder="Specialkost" type="text" name="Specialkost"><br>
+
                     <p class="ocentrerad_text">Kommer du att kunna delta?</p>
                     <br>
                     <div class="radio">
@@ -221,6 +266,7 @@
                     </div>
                     <button class="send-button" type="submit">SKICKA</button><br>
                 </form>
+                <br>
             </section>
 
             <br>
