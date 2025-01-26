@@ -18,6 +18,8 @@
 
     <div class="overlay" id="overlay"></div>
 
+    <div class="popup" id="popup"></div>
+
     <div class="menu-container">
         <button class="menu-button" id="m_button" onclick="toggleMenu()">☰</button>
         <p class="initialer">Ella & Liam</p>
@@ -30,8 +32,8 @@
             <a href="#vigsel">
                 <div class="nav_button">VIGSEL</div>
             </a>
-            <a href="#fest">
-                <div class="nav_button">BRÖLLOPSFEST</div>
+            <a href="#middag">
+                <div class="nav_button">MIDDAG</div>
             </a>
             <a href="#tema">
                 <div class="nav_button">TEMA</div>
@@ -73,7 +75,7 @@
             <section class="section_block">
                 <p id="intro_text" class="ocentrerad_text">På den här sidan finns all viktig information ni
                     behöver känna till inför vårt bröllop. Allt från detaljer om tid och plats till
-                    praktisk information om ceremonin och festen.
+                    praktisk information om ceremonin och middagen.
                     <br><br>
                     Sidan har jag, Liam, programmerat. Om något inte fungerar som det ska,
                     eller om ni har andra frågor, så är ni välkomna att kontakta mig.
@@ -102,16 +104,16 @@
             </section>
         </section>
 
-        <section id="fest">
+        <section id="middag">
 
-            <h2>Bröllopsfest</h2>
+            <h2>Bröllopsmiddag</h2>
             <section class="section_block">
                 <img src="images/länna_gård.jpeg" id="länna_gård" alt="länna gård">
                 <h2>Länna gård</h2>
                 <p class="ocentrerad_text">
                     Efter kyrkfikat fortsätter vi att fira på Länna gård, där
-                    bröllopsfesten äger rum. Om du har hittat till denna webbsida
-                    är du troligtvis bjuden till festen, men om du är osäker - dubbelkolla
+                    bröllopsmiddagen äger rum. Om du har hittat till denna webbsida
+                    är du troligtvis bjuden till middagen, men om du är osäker - dubbelkolla
                     gärna inbjudningskortet du fått. Klicka på kartan nedan för att se
                     vägbeskrivning till gården.
                 </p>
@@ -131,7 +133,7 @@
                 <h2>Klädkod - Kavaj</h2>
                 <p id="klädkod_text" class="ocentrerad_text">
                     <strong>Herrar: </strong> <br>
-                    Bär en kostym eller udda kavaj och byxor i valfria färger. För att följa temat,
+                    Bär en kostym eller udda kavaj och byxor i valfria färger. Om du vill följa temat,
                     som är pastellfärger, kan du välja en passande skjorta, slips eller fluga. <br><br>
                     <strong>Damer: </strong> <br>
                     För damer innebär kädkoden en elegant klänning, kjol eller byxdress i pastellfärger
@@ -149,7 +151,7 @@
             <section class="section_block">
                 <h2>Tal och spex</h2>
                 <p class="ocentrerad_text">
-                    Vill du hålla ett tal eller bjuda på ett spex under bröllopsfesten så
+                    Vill du hålla tal eller bjuda på ett spex under bröllopsmiddagen så
                     får du gärna fylla i formuläret nedan. <br><br>
 
                     För att tiden ska räcka till alla som vill bidra,
@@ -217,10 +219,22 @@
                 <p class="ocentrerad_text">
                     Som studenter är vi förstås ekonomiskt oberoende och har redan allt vi behöver.
                 </p>
+                <br><br><br>
+
+                <button id="whishlist_button" class="send-button" onclick="toggleWishlist()">Visa önskelista</button>
+
+                <section id="whishlist_section">
+
+                    <div id="whishlist">
+                    </div>
+
+                    <br><br>
+                </section>
+
             </section>
         </section>
 
-        <br><br><br>
+        <br><br>
         <section class="section_block">
             <img src="images/valv_tittar_symetrisk.jpg" alt="tittar på varandra" id="valv_tittar">
         </section>

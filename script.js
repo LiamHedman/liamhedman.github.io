@@ -1,13 +1,88 @@
+const apiURL = "https://sheetdb.io/api/v1/qb88clf5emd60"
+let currentItemId = null;
+
+// Hämta alla items från databasen
+async function loadItems() {
+    const response = await fetch(apiURL);
+    const data = await response.json();
+
+    const list = document.getElementById("whishlist");
+    list.innerHTML = "";
+
+    data.forEach(item => {
+        const listItem = document.createElement("div");
+        listItem.className = "item";
+        listItem.innerHTML = `
+            <p class="ocentrerad_text">
+            ${item.name} - Antal: ${item.quantity}
+            </p>
+            <button class="reserve-button" onclick="openPopup()">
+            Reservera ${item.name}
+            </button><br><br>
+        `;
+        list.appendChild(listItem);
+    });
+}
+
+// Reservera ett item
+async function reserveItem() {
+
+    const response = await fetch(`${apiURL}/search?id=${id}`);
+    const item = (await response.json())[0];
+
+    if (item.quantity > 0 && item.quantity >= quantity) {
+        const updatedQuantity = item.quantity - quantity;
+
+        await fetch(`${apiURL}/id/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: { quantity: updatedQuantity } })
+        });
+
+        loadItems();
+    } else {
+        alert("Hoppsan! Du försöker reservera fler " + item.name + " än paret har önskat sig.");
+    }
+}
+
+function openPopup() {
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+
+    const popup = document.getElementById("popup");
+    popup.style.display = "Block";
+    popup.style.transition = "opacity 0.2 ease"
+    popup.style.opacity = "100";
+    popup.innerHTML = ""
+    popup.innerHTML = `
+            <button class="close" onclick="closePopupAndOverlay()"><strong>×</strong></button>
+            <p>Reservera föremål</p>
+            <p id="popupItemName"></p>
+            <input id="reservationQuantity" type="number" min="1" placeholder="Ange antal att reservera" required>
+            <button class="send-button" onclick="reseveItem()">Reservera</button>
+        `;
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+function closePopupAndOverlay() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+
 // För öppning och stängning av sidomenyn
 function toggleMenu() {
+    const overlay = document.getElementById("overlay");
     const menu = document.getElementById("sideMenu");
 
     if (menu.style.left === "0px") {
-        menu.style.left = "-250px"; // Dölj menyn
-        overlay.style.display = "none"; // Dölj överlägget
+        overlay.style.display = "none";
+        menu.style.left = "-250px";
     } else {
-        menu.style.left = "0px"; // Visa menyn
-        overlay.style.display = "block"; // Visa överlägget
+        menu.style.left = "0px";
+        overlay.style.display = "block";
     }
     spinButton();
 }
@@ -26,11 +101,27 @@ function spinButton() {
 
 // För stängning av sidomenyn
 function hideMenu(menu) {
+    const overlay = document.getElementById("overlay");
+
     if (menu.style.left === "0px") {
         menu.style.left = "-250px"; // Dölj menyn
         overlay.style.display = "none"; // Dölj överlägget
         spinButton();
     }
+}
+
+function toggleWishlist() {
+    const whishlist = document.getElementById("whishlist_section");
+    const button = document.getElementById("whishlist_button")
+
+    button.style.opacity = "0";
+    button.style.transition = "opacity 0.2 ease";
+    button.classList.toggle('open');
+
+    setTimeout(() => {
+        button.display = "none";
+        whishlist.classList.toggle('open');
+    }, 200);
 }
 
 function toggleForm(int) {
@@ -87,3 +178,25 @@ document.addEventListener("click", function (event) {
         hideMenu(menu);
     }
 });
+
+document.addEventListener("click", function (event) {
+    const button = document.querySelector(".menu-button");
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("overlay");
+    const menu = document.getElementById("sideMenu");
+
+    if (!popup.contains(event.target) && overlay.style.display === "none") {
+        closePopup();
+        if (!button.contains(event.target)) {
+            overlay.style.display = "none";
+        }
+    } else if (!popup.contains(event.target) && overlay.contains(event.target)) {
+        closePopup();
+        overlay.style.display = "none";
+    } else if (button.contains(event.target)) {
+        closePopup();
+    }
+
+});
+
+loadItems();
