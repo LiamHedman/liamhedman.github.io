@@ -16,7 +16,7 @@ async function loadItems() {
             <p class="ocentrerad_text">
             ${item.name} - Antal: ${item.quantity}
             </p>
-            <button class="reserve-button" onclick="openPopup()">
+            <button class="reserve-button" onclick="openPopup(${item.id})">
             Reservera ${item.name}
             </button><br><br>
         `;
@@ -27,25 +27,38 @@ async function loadItems() {
 // Reservera ett item
 async function reserveItem() {
 
-    const response = await fetch(`${apiURL}/search?id=${id}`);
+    const response = await fetch(`${apiURL}/search?id=${currentItemId}`);
     const item = (await response.json())[0];
+    const quantity = parseInt(document.getElementById("reservationQuantity").value, 10);
+
+    if (quantity <= 0) {
+        alert("Reservera ett giltigt antal!")
+        return;
+    }
 
     if (item.quantity > 0 && item.quantity >= quantity) {
         const updatedQuantity = item.quantity - quantity;
 
-        await fetch(`${apiURL}/id/${id}`, {
+        await fetch(`${apiURL}/id/${currentItemId}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ data: { quantity: updatedQuantity } })
         });
 
+        closePopupAndOverlay();
         loadItems();
+        alert("Du har reserverat " + quantity +" "+ item.name );
     } else {
         alert("Hoppsan! Du försöker reservera fler " + item.name + " än paret har önskat sig.");
     }
 }
 
-function openPopup() {
+async function openPopup(itemID) {
+    currentItemId = itemID;
+
+    const response = await fetch(`${apiURL}/search?id=${itemID}`);
+    const item = (await response.json())[0];
+
     const overlay = document.getElementById("overlay");
     overlay.style.display = "block";
 
@@ -56,20 +69,21 @@ function openPopup() {
     popup.innerHTML = ""
     popup.innerHTML = `
             <button class="close" onclick="closePopupAndOverlay()"><strong>×</strong></button>
-            <p>Reservera föremål</p>
-            <p id="popupItemName"></p>
-            <input id="reservationQuantity" type="number" min="1" placeholder="Ange antal att reservera" required>
-            <button class="send-button" onclick="reseveItem()">Reservera</button>
+            <p>Reservera ${item.name}</p>
+            <input id="reservationQuantity" type="number" min="1" max="${item.quantity}"placeholder="Ange antal att reservera" required>
+            <button class="send-button" onclick="reserveItem()">Reservera</button>
         `;
 }
 
 function closePopup() {
     document.getElementById("popup").style.display = "none";
+    currentItemId = null;
 }
 
 function closePopupAndOverlay() {
     document.getElementById("popup").style.display = "none";
     document.getElementById("overlay").style.display = "none";
+    currentItemId = null;
 }
 
 // För öppning och stängning av sidomenyn

@@ -4,8 +4,9 @@
 
 - Fixa önskelista
   
-  - Fixa visa önskelista
   - Fixa popup
+  - Fixa item id
+  - Fixa Länkar och bilder i önskelistan
   - Fixa person-id
 
 - Fylla sidan med text
