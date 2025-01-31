@@ -1,15 +1,18 @@
-const apiURL = "https://sheetdb.io/api/v1/qb88clf5emd60"
+const whislistApiURL = "https://sheetdb.io/api/v1/qb88clf5emd60"
+let cachedItems = [];
 let currentItemId = null;
 
 // Hämta alla items från databasen
 async function loadItems() {
-    const response = await fetch(apiURL);
-    const data = await response.json();
+    const response = await fetch(whislistApiURL);
+    cachedItems = await response.json();
 
     const list = document.getElementById("whishlist");
     list.innerHTML = "";
 
-    data.forEach(item => {
+    const validItems = cachedItems.filter(item => item.name && item.quantity > 0);
+
+    validItems.forEach(item => {
         const listItem = document.createElement("div");
         listItem.className = "item";
         listItem.innerHTML = `
@@ -27,37 +30,68 @@ async function loadItems() {
 // Reservera ett item
 async function reserveItem() {
 
-    const response = await fetch(`${apiURL}/search?id=${currentItemId}`);
-    const item = (await response.json())[0];
+    const item = cachedItems.find(i => i.id == currentItemId);
+    if (!item) {
+        alert("Reserveringsfel: Objektet kunde inte hittas.");
+        return;
+    }
+
     const quantity = parseInt(document.getElementById("reservationQuantity").value, 10);
+    const reserver_name = document.getElementById("reserver_name").value.toString();
 
     if (quantity <= 0) {
         alert("Reservera ett giltigt antal!")
+        window.location.reload();
         return;
     }
 
     if (item.quantity > 0 && item.quantity >= quantity) {
         const updatedQuantity = item.quantity - quantity;
 
-        await fetch(`${apiURL}/id/${currentItemId}`, {
+        await fetch(`${whislistApiURL}/id/${currentItemId}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ data: { quantity: updatedQuantity } })
+            body: JSON.stringify({
+                data: {
+                    quantity: updatedQuantity,
+                }
+            })
+        });
+
+        console.log(reserver_name);
+
+        await fetch(`${whislistApiURL}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                    data: {
+                        person_id: reserver_name,
+                        item_id: item.id,
+                        item_name: item.name,
+                        reserved_quantity: quantity,
+                        date_reservation_id: new Date().toISOString()
+                    }
+                }
+            )
         });
 
         closePopupAndOverlay();
-        loadItems();
-        alert("Du har reserverat " + quantity +" "+ item.name );
+        alert("Du har reserverat " + quantity + " " + item.name);
+        window.location.reload();
     } else {
         alert("Hoppsan! Du försöker reservera fler " + item.name + " än paret har önskat sig.");
+        window.location.reload();
     }
 }
 
 async function openPopup(itemID) {
     currentItemId = itemID;
 
-    const response = await fetch(`${apiURL}/search?id=${itemID}`);
-    const item = (await response.json())[0];
+    const item = cachedItems.find(i => i.id == itemID);
+    if (!item) {
+        alert("Popupfel: Föremålet " + item.name + " kunde inte laddas. Försök igen eller kontakta Liam.");
+        return;
+    }
 
     const overlay = document.getElementById("overlay");
     overlay.style.display = "block";
@@ -70,7 +104,18 @@ async function openPopup(itemID) {
     popup.innerHTML = `
             <button class="close" onclick="closePopupAndOverlay()"><strong>×</strong></button>
             <p>Reservera ${item.name}</p>
-            <input id="reservationQuantity" type="number" min="1" max="${item.quantity}"placeholder="Ange antal att reservera" required>
+            <br>
+            <p class="ocentrerad_text">Ange hur många du vill reservera:</p>
+            <br>
+            <input id="reservationQuantity" type="number" min="1" max="${item.quantity}"placeholder="Antal" required>
+            <br>
+            <br>
+            <p class="ocentrerad_text">Skriv ditt namn så att du kan ändra din resreverade mängd om du ångrar dig 
+            (Brudparet ser inte ditt namn eller vad du ressreverar):</p>
+            <br>
+            <input id="reserver_name" type="text" placeholder="För och efternamn" required>
+            <br>
+            <br>
             <button class="send-button" onclick="reserveItem()">Reservera</button>
         `;
 }
@@ -125,6 +170,8 @@ function hideMenu(menu) {
 }
 
 function toggleWishlist() {
+    loadItems();
+
     const whishlist = document.getElementById("whishlist_section");
     const button = document.getElementById("whishlist_button")
 
@@ -213,4 +260,12 @@ document.addEventListener("click", function (event) {
 
 });
 
-loadItems();
+async function hashString(str) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
+

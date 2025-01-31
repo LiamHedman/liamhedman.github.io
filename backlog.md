@@ -4,10 +4,8 @@
 
 - Fixa önskelista
   
-  - Fixa popup
-  - Fixa item id
+  - Fixa så att man kan ändra reservationer
   - Fixa Länkar och bilder i önskelistan
-  - Fixa person-id
 
 - Fylla sidan med text
 - Fylla sidan med bilder
