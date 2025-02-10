@@ -146,7 +146,7 @@
 
     input {
         margin-bottom: 10px;
-        background-color: rgb(216, 216, 216);
+        background-color: rgb(232, 232, 232);
         border: none;
         border-bottom: solid 3px rgb(212, 162, 186);
         border-radius: 0;
@@ -162,6 +162,23 @@
         outline: 2px solid #bbdcff;
         background-color: rgb(242, 250, 255);
     }
+
+    select {
+        margin-bottom: 10px;
+        background-color: rgb(232, 232, 232);
+        border: none;
+        border-bottom: solid 3px rgb(212, 162, 186);
+        border-radius: 0;
+        font-size: 15px;
+        padding: 5px;
+        color: rgb(27, 27, 27);
+        width: 90%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+    }
+
 
     .header {
         position: relative;
@@ -514,6 +531,7 @@
         z-index: 1000;
         display: none;
         text-align: center;
+        align-content: center;
         gap: 100px;
     }
 

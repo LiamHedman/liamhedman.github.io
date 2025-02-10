@@ -4,9 +4,10 @@
 
 - Fixa önskelista
   
-  - Fixa så att man kan ändra reservationer
+  - Plötsligt funkar inget
   - Fixa Länkar och bilder i önskelistan
 
+- Fixa snygg popup
 - Fylla sidan med text
 - Fylla sidan med bilder
 - Fixa hemsida för dator
