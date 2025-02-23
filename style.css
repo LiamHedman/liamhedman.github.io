@@ -19,11 +19,10 @@
 
     body {
         background-image: url(images/kramas_blomma.jpg);
-        background-size: contain;
         background-attachment: fixed;
-        background-size: cover;
-        background-position: center -95vw;
+        background-position: center -150px;
         background-repeat: no-repeat;
+        background-size: cover;
         font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
         background-color: transparent;
