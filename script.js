@@ -20,6 +20,8 @@ async function loadItems() {
             <p class="ocentrerad_text">
             ${item.name} - Antal: ${item.quantity}
             </p>
+            <a href="${item.link}"><img src="images/${item.img_src}" class="whishlist_img"></img></a>
+            <br>
             <button class="reserve-button" onclick="openPopup(${item.id})">
             Reservera ${item.name}
             </button><br><br>
@@ -143,7 +145,7 @@ async function changeReservation() {
             <select id="select"></select>
             <br>
             <br>
-            <p class="ocentrerad_text">Hur många vill du ta bort från din reserverade mångd?
+            <p class="ocentrerad_text">Hur många vill du ta bort från din reserverade mångd?</p>
             <br>
             <br>
             <input id="reservation_quantity" type="number" min="1" placeholder="Antal" required>
@@ -403,26 +405,20 @@ document.addEventListener("click", function (event) {
 
 });
 
-async function hashString(str) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(str);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-    return hashHex;
-}
-
 function getReservations(person_name, item_name) {
     const persons_reservations = cachedItems.filter(person => String(person.person_id) == String(person_name));
     const item_reservations = persons_reservations.filter(reservation => String(reservation.item_name) == String(item_name));
 
     let totalReserved = 0;
 
-        
-
     item_reservations.forEach(reservation => {
         let quant = reservation.reserved_quantity;
-        console.log(quant + "\n");
+        console.log("Rå värde:", quant); // Debug
+
+        if (typeof quant === "string") {
+            quant = quant.replace(/[−]/g, "-").trim(); // Byt ut Unicode-minus och ta bort whitespace
+        }
+    
         if (!isNaN(quant)) {
             totalReserved += parseInt(quant);
         }

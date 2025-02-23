@@ -127,9 +127,10 @@
 
     #whishlist_section.open {
         opacity: 100;
-        max-height: 200vw;
+        max-height: 500vw;
         padding: 15px;
-        display: block;
+        display: flex;
+        justify-content: center;
     }
 
     #osa_form.open {
@@ -164,7 +165,6 @@
     }
 
     select {
-        margin-bottom: 10px;
         background-color: rgb(232, 232, 232);
         border: none;
         border-bottom: solid 3px rgb(212, 162, 186);
@@ -374,7 +374,7 @@
     }
 
     #whishlist {
-        justify-content: left;
+        justify-content: center;
     }
 
     .reserve-button {
@@ -488,15 +488,6 @@
         display: none;
     }
 
-    .filler {
-        position: absolute;
-        place-self: bottom;
-        bottom: 0;
-        height: 20vh;
-        width: 20vh;
-        border: 1px solid red;
-    }
-
     label {
         font-size: 20px;
         font-weight: bold;
@@ -566,6 +557,21 @@
         border-radius: 5px;
         width: 50vw;
         position: relative;
+    }
+
+    .whishlist_img {
+        width: 70vw;
+        max-height: 10vh;
+        height: auto;
+        place-self: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .item {
+        text-align: center;
     }
 
     #whishlist_section {
