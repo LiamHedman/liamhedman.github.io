@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
 
 
+
+
 /*För webbläsare på dator*/
 
 @media (min-width: 769px) {
     .menu-button {
         display: none;
     }
-
+    
+    #filler1 {
+        display: block;
+        margin: 60px;
+    }
+    
     html {
         scroll-behavior: smooth;
     }
@@ -220,7 +227,7 @@
     }
 
     h1 {
-        padding-top: 70px;
+        padding-top: 200px;
         padding-bottom: 0;
         margin: 0;
         align-items: center;
@@ -621,6 +628,11 @@
 
 @media (max-width: 768px) {
 
+    #filler1 {
+        display: block;
+        margin: 4vh;
+    }
+
     html {
         scroll-behavior: smooth;
     }
@@ -633,9 +645,9 @@
     body {
         background-image: url(images/valv_tittar_symetrisk_cropped.jpg);
         background-attachment: fixed;
-        background-position: center -150px;
+        background-position: center 0;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100vw;
         font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
         background-color: transparent;
@@ -830,7 +842,7 @@
     }
 
     h1 {
-        padding-top: 50px;
+        padding-top: 100px;
         padding-bottom: 0;
         margin: 0;
         align-items: center;
