@@ -24,7 +24,7 @@
         <button class="menu-button" id="m_button" onclick="toggleMenu()">☰</button>
         <p class="initialer">Ella & Liam</p>
 
-        <div class="side-menu" id="sideMenu" onclick="toggleMenu()">
+        <div class="side-menu" id="sideMenu" onclick="toggleMenu(1)">
             <br><br><br>
             <a href="#hem">
                 <div class="nav_button">HEM</div>
@@ -53,9 +53,14 @@
 
     <div class="content">
 
-        <img src="images/pink-flowers/pink-flowers-upper-left-corner.png" alt="uppe-vänster" class="floating-img-l">
-        <img src="images/pink-flowers/pink-flowers-upper-right-corner.png" alt="uppe-höger" class="floating-img-r">
-
+        <img id="blomma1" class="blomma" src="images/pink-flowers/blomma_kort1.png">
+        <img id="blomma2" class="blomma" src="images/pink-flowers/blomma_kort2.png">
+        <img id="blomma3" class="blomma" src="images/pink-flowers/blomma_kort1.png">
+        <img id="blomma4" class="blomma" src="images/pink-flowers/blomma_kort2.png">
+        <img id="blomma5" class="blomma" src="images/pink-flowers/blomma_kort2.png">
+        <img id="blomma6" class="blomma" src="images/pink-flowers/blomma_kort2.png">
+        <img id="blomma7" class="blomma" src="images/pink-flowers/blomma_kort1.png">
+        
         <section id="hem">
 
             <div class="header">
@@ -91,10 +96,12 @@
                 <img src="images/2025-01-18.png" id="funbo_kyrka" alt="funbo kyrka">
                 <h2>Funbo Kyrka</h2>
                 <p class="ocentrerad_text">
-                    Vigselceremonin äger rum i Funbo kyrka den 5 juli 2025 kl. 14:00.
+                    Vigselceremonin äger rum i Funbo kyrka den 5 juli 2025 kl. 14:00. 
+                    För att allt ska flyta på smidigt ber vi er att komma i god tid, gärna senast kl. 13:45.
                     Efter ceremonin är alla som deltar varmt välkomna på kaffe och
-                    fika i församlingshemmet, som ligger precis intill kyrkan. Klicka
-                    på kartan nedan för att se vägbeskrivning till kyrkan.
+                    fika i församlingshemmet, som ligger precis intill kyrkan. 
+                    <br><br>
+                    Klicka på kartan nedan för att se vägbeskrivning till kyrkan.
                 </p>
                 <br>
                 <br>
@@ -111,12 +118,14 @@
                 <img src="images/länna_gård.jpeg" id="länna_gård" alt="länna gård">
                 <h2>Länna gård</h2>
                 <p class="ocentrerad_text">
-                    Efter kyrkfikat fortsätter vi att fira på Länna gård, där
-                    bröllopsmiddagen äger rum. Om du har hittat till denna webbsida
-                    är du troligtvis bjuden till middagen, men om du är osäker - dubbelkolla
-                    gärna inbjudningskortet du fått. Parkering finns bakom den röda ladan, 
-                    men ingången är på framsidan. Klicka på kartan nedan för att se
-                    vägbeskrivning till gården.
+                    Efter kyrkfikat ungefär 16:30 fortsätter vi att fira på Länna gård, där
+                    bröllopsmiddagen äger rum. Om du har fått en QR-kod och en länk till 
+                    denna webbsida på ditt inbjudningskort, betyder det att du är bjuden till festen. 
+                    Är du osäker? Dubbelkolla gärna ditt inbjudningskort. 
+                    Parkering finns bakom den röda ladan, 
+                    men ingången är på framsidan.
+                    <br><br>
+                    Klicka på kartan nedan för att se vägbeskrivning till gården.
                 </p>
                 <br>
                 <br>
@@ -130,11 +139,11 @@
 
             <h2>Tema och klädkod</h2>
             <section class="section_block">
-                <img id="kostymer" src="images/kostymer.JPG" alt="herrar i kostymer">
+                <img src="images/pastell.jpg" alt="pastellfärger" id="pastell">
                 <h2>Klädkod - Kavaj</h2>
                 <p id="klädkod_text" class="ocentrerad_text">
                     <strong>Herrar: </strong> <br>
-                    Bär en kostym eller udda kavaj och byxor i valfria färger. Om du vill följa temat,
+                    Bär en kostym eller kavaj och byxor i valfria färger. Om du vill följa temat,
                     som är pastellfärger, kan du välja en passande skjorta, slips eller fluga. <br><br>
                     <strong>Damer: </strong> <br>
                     För damer innebär kädkoden en elegant klänning, kjol eller byxdress i pastellfärger
@@ -142,7 +151,6 @@
                     då tror kanske någon att du är bruden! <br>
                 </p>
                 <br>
-                <img src="images/pastell.jpg" alt="pastellfärger" id="pastell">
             </section>
         </section>
 
@@ -156,7 +164,7 @@
                     får du gärna fylla i formuläret nedan. <br><br>
 
                     För att tiden ska räcka till alla som vill bidra,
-                    ber vi dig försöka hålla din aktivitet under 10 minuter. <br><br>
+                    ber vi dig försöka hålla din aktivitet under 5 minuter. <br><br>
 
                     Vid frågor kring tal och spex kan du kontakta våra fantastiska toastmasters,
                     Philip och Jennifer:
@@ -167,6 +175,8 @@
                     <strong>Jennifer:</strong><br>
                     076-416 78 71
                     <br><br>
+                    <strong>OBS</strong>
+                    <br>
                     Brudparet ser inte vad du skriver i formuläret, det skickas direkt till våra toastmasters.
                     <br><br><br><br>
                 </p>
@@ -215,12 +225,23 @@
 
         <section id="önskelista">
 
-            <h2>Önskelista</h2>
+            <h2>Gåvor</h2>
             <section class="section_block">
                 <br><br>
                 <p class="ocentrerad_text">
-                    Som studenter har vi det knapert och skulle uppskatta ett ekonomiskt bidrag till vår framtid tillsammans.
-                    Om man istället vill köpa en present åt oss så har vi en önskelista.
+                    Det finaste vi kan få är att fira denna dag tillsammans med er.
+                    Vi förväntar oss inte presenter av alla gäster, er närvaro är mer än nog för oss.
+                </p>
+                <p class="ocentrerad_text">
+                    Om ni ändå vill ge något skulle vi bli glada om ni skänkte en gåva till <a href="https://www.open-doors.se/ge/Gavobevis/">OpenDoors.</a> 
+                </p>
+                <br>
+                <button id="whishlist_button" class="send-button" onclick="window.location.href='https://www.open-doors.se/ge/Gavobevis/';">Ge gåva till OpenDoors</button>
+                <br>
+                <p class="ocentrerad_text">
+                    För den som vill ge en fysisk gåva finns en önskelista nedan, 
+                    eller om ni vill bidra ekonomiskt till vår framtid tillsammans uppskattas ett litet bidrag.
+                    Oavsett vad ni väljer är vi främst tacksamma att ni kommer på vårat bröllop.
                 </p>
                 <br><br>
 

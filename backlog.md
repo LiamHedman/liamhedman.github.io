@@ -2,5 +2,6 @@
 
 - Fixa bakgrundsbilden
 
-- Fixa hemsida för dator
-- Fylla sidan med bilder
+- Fixa blommorna
+- Fixa texten
+- Fixa sidans bilder

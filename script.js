@@ -9,7 +9,12 @@ async function loadItems() {
     cachedItems = await response.json();
 
     const list = document.getElementById("whishlist");
-    list.innerHTML = "";
+    list.innerHTML = `
+    <p class="ocentrerad_text">
+    Observera att antal kan syfta på antal av förpackingar inehållande flera av ett förmål. Klicka på föremålet för att se detta.
+    <br><br>
+    </p>
+    `;
 
     const validItems = cachedItems.filter(item => item.name && item.quantity > 0);
 
@@ -21,6 +26,7 @@ async function loadItems() {
             ${item.name} - Antal: ${item.quantity}
             </p>
             <a href="${item.link}"><img src="images/${item.img_src}" class="whishlist_img"></img></a>
+            <a href="${item.link}"><p class="link_text">${item.link}</p></a>
             <br>
             <button class="reserve-button" onclick="openPopup(${item.id})">
             Reservera ${item.name}
@@ -277,7 +283,11 @@ function closePopupAndOverlay() {
 }
 
 // För öppning och stängning av sidomenyn
-function toggleMenu() {
+function toggleMenu(opt) {
+    if (window.innerWidth > 768 && opt == 1) {
+        return;
+    }
+    
     const overlay = document.getElementById("overlay");
     const menu = document.getElementById("sideMenu");
 

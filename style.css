@@ -3,6 +3,619 @@
 
 /*För webbläsare på dator*/
 
+@media (min-width: 769px) {
+    .menu-button {
+        display: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    body {
+        background-image: url(images/valv_tittar_symetrisk_cropped.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14px;
+        background-color: rgb(216, 140, 161);
+        color: black;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 40vw;
+    }
+
+    .content {
+        align-items: center;
+        background-color: white;
+        border-radius: 0;
+        box-shadow: 0 -10px 20px rgba(0, 0, 0, .4);
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        gap: 10px;
+        min-height: 200vh;
+        padding-bottom: 0;
+        padding-top: 0;
+        place-content: top center;
+        place-items: top center;
+        position: relative;
+        text-align: center;
+        top: 450px;
+        width: 100vw auto;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .centrerad_text {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .ocentrerad_text {
+        font-size: 20px;
+        max-width: 40vw;
+        text-align: left;
+    }
+
+    .link_text {
+        margin: 0;
+        font-size: 20px;
+        max-width: 70vw;
+        color: midnightblue;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .floating-img1 {
+        position: relative;
+        bottom: 0px;
+        width: 50vw;
+        height: auto;
+        z-index: 1;
+    }
+
+    .blomma {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        z-index: 0;
+    }
+
+    #blomma7 {
+        top: 220vh;
+        left: -70px;
+        transform: rotate(95deg);
+    }
+
+    #blomma6 {
+        top: -25vh;
+        left: -50px;
+        transform: rotate(50deg);
+        width: 350px;
+    }
+
+    #blomma5 {
+        top: -25vh;
+        right: -50px;
+        transform: rotate(-90deg);
+        width: 350px;
+    }
+
+    #blomma1 {
+        top: 100vh;
+        left: -70px;
+        transform: rotate(45deg);
+    }
+
+    #blomma2 {
+        top: 200vh;
+        right: -70px;
+        transform: rotate(-45deg);
+    }
+
+    #blomma3 {
+        top: 450vh;
+        right: -75px;
+        transform: rotate(-30deg);
+    }
+
+    #blomma4 {
+        top: 350vh;
+        left: -75px;
+        transform: rotate(30deg);
+    }
+
+    form {
+        max-height: 0;
+        /* Dölj formuläret initialt */
+        opacity: 0;
+        overflow: hidden;
+        /* Dölj innehåll utanför den synliga ytan */
+        transition: max-height 1.0s ease-out;
+        /* Lägg till en mjuk rull-effekt */
+        display: flex;
+        flex-direction: column;
+        border: none;
+        border-top: solid 3px rgb(212, 162, 186);
+        border-bottom: solid 3px rgb(212, 162, 186);
+        max-width: 80vw;
+        text-align: left;
+        padding: 20px;
+        padding-left: 70px;
+        padding-right: 70px;
+        border-radius: 0;
+        background-color: white;
+    }
+
+    #whishlist_section.open {
+        opacity: 100;
+        max-height: 500vw;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #osa_form.open {
+        opacity: 100;
+        max-height: 200vw;
+        padding: 15px;
+    }
+
+    #spex_form.open {
+        opacity: 100;
+        max-height: 200vw;
+        padding: 15px;
+    }
+
+    input {
+        margin-bottom: 10px;
+        background-color: rgb(232, 232, 232);
+        border: none;
+        border-bottom: solid 3px rgb(212, 162, 186);
+        border-radius: 0;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    input::placeholder {
+        color: rgb(27, 27, 27);
+    }
+
+    input:focus {
+        outline: 2px solid #bbdcff;
+        background-color: rgb(242, 250, 255);
+    }
+
+    select {
+        background-color: rgb(232, 232, 232);
+        border: none;
+        border-bottom: solid 3px rgb(212, 162, 186);
+        border-radius: 0;
+        font-size: 15px;
+        padding: 5px;
+        color: rgb(27, 27, 27);
+        width: 90%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+    }
+
+    .header {
+        position: relative;
+        text-align: center;
+    }
+
+    h1 {
+        padding-top: 70px;
+        padding-bottom: 0;
+        margin: 0;
+        align-items: center;
+        position: relative;
+        color: black;
+        font-family: "MonteCarlo", cursive;
+        font-size: 5vw;
+        font-weight: 90;
+        text-align: center;
+    }
+
+    h2 {
+        font-family: "MonteCarlo", cursive;
+        font-weight: 90;
+        font-size: 50px;
+        text-align: center;
+        text-decoration: none;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .section_block {
+        width: 50vw;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, .2);
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 50px;
+        z-index: 2;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: "MonteCarlo", cursive;
+        font-size: 4vw;
+        padding: 0;
+        text-align: center;
+    }
+
+    p {
+        position: relative;
+        font-size: 3vw;
+        margin: 8px;
+        text-align: center;
+    }
+
+    #preloader {
+        height: 150vh;
+        width: 100vw;
+        background-color: white;
+        display: flex;
+        top: -200px;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+    }
+
+    #preloader-icon {
+        width: 100px;
+        height: auto;
+        animation: pulse 0.4s infinite;
+    }
+
+    #funbo_kyrka {
+        height: auto;
+        width: 80vw;
+    }
+
+    #länna_gård {
+        height: auto;
+        width: 80vw;
+    }
+
+    #kostymer {
+        height: auto;
+        width: 80vw;
+    }
+
+    #pastell {
+        height: auto;
+        width: 80vw;
+    }
+
+    #funbo_karta {
+        height: auto;
+        width: 80vw;
+    }
+
+    #länna_karta {
+        height: auto;
+        width: 80vw;
+    }
+
+    #valv_tittar {
+        height: auto;
+        width: 80vw;
+    }
+
+    button:hover {
+        background-color: azure;
+        border-radius: 0;
+    }
+
+    .menu-container {
+        place-self: top center;
+        position: fixed;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        width: 100vw;
+        height: 54px;
+        text-decoration: none;
+        top: 0;
+        z-index: 5;
+    }
+
+    button {
+        padding: 1px;
+        border-style: solid;
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: white;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+        color: black;
+        text-decoration: none;
+        border-color: transparent;
+    }
+
+    #whishlist_button.open {
+        overflow: hidden;
+    }
+
+    #osa_button.open {
+        overflow: hidden;
+    }
+
+    #spex_button.open {
+        overflow: hidden;
+    }
+
+    .send-button {
+        background-color: white;
+        width: 80%;
+        place-self: center;
+        border-radius: 0;
+        border-style: outset;
+        border-color: rgb(212, 162, 186);
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        color: black;
+        padding: 5px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    #whishlist {
+        justify-content: center;
+        align-content: center;
+        max-width: 50vw;
+    }
+
+    .reserve-button {
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+        border-style: outset;
+        border-color: rgb(212, 162, 186);
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        color: black;
+        padding: 5px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+
+    .open-form-button {
+        width: 90%;
+        background-color: white;
+        border-radius: 0;
+        border-style: outset;
+        border-color: rgb(212, 162, 186);
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        color: black;
+        padding: 5px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .osa-button {
+        background-color: rgb(255, 249, 249);
+        border-radius: 0;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+        margin-top: 50px;
+        color: black;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    .initialer {
+        font-family: "MonteCarlo", cursive;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .side-menu {
+        background: linear-gradient(to bottom, white, rgb(219, 219, 219));
+        width: 100vw;
+        height: 7vh;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        box-shadow: 0 7px 7px rgba(0, 0, 0, .4);
+    }
+
+    .topButton {
+        width: inherit;
+        border-radius: 0;
+        font-size: 20px;
+        color: black;
+        background-color: white;
+        padding: 10px;
+        padding-top: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: none;
+    }
+
+    .text_container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid black;
+        font-size: 12px;
+        margin-bottom: 0;
+        place-self: center;
+        place-content: center;
+        place-items: center;
+        text-align: center;
+        width: 75vw;
+        height: 10px;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        display: none;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .radio {
+        color: rgb(83, 55, 68);
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+
+    .nav_button {
+        padding: 12px;
+        padding-left: 30px;
+        padding-right: 30px;
+        max-height: max-content;
+        border-right: solid grey 1px;
+        border-left: solid grey 1px;
+    }
+
+    .nav_button:hover {
+        background-color: #eff7ff;
+    }
+
+    .popup {
+        opacity: 0;
+        position: fixed;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 30px;
+        width: 80vw;
+        max-width: 90vw;
+        min-height: 50vw;
+        height: auto;
+        box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        z-index: 1000;
+        display: none;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    .close {
+        background-color: white;
+        border-color: transparent;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        font-size: 40px;
+        height: 10%;
+        padding: 5px;
+        position: absolute;
+        text-decoration: none;
+        color: black;
+        z-index: 101;
+        top: 0px;
+        right: 10px;
+        position: top right;
+        border: none;
+        cursor: pointer;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+    }
+
+    .popup input {
+        width: 50%;
+    }
+
+    .popup .ocentrerad_text {
+        place-self: center;
+    }
+
+    .popup .send-button {
+        width: 50%;
+    }
+
+    .popup select {
+        width: 50%;
+    }
+
+    .whishlist_img {
+        width: 40vw;
+        max-height: 10vw;
+        height: auto;
+        place-self: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .item {
+        text-align: center;
+        max-width: 40vw;
+        border-bottom: solid 1px;
+    }
+
+    #whishlist_section {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 1.0s ease-out;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        border-top: solid 3px rgb(212, 162, 186);
+        border-bottom: solid 3px rgb(212, 162, 186);
+        max-width: 50vw;
+        text-align: left;
+        padding: 20px;
+        padding-left: 70px;
+        padding-right: 70px;
+        border-radius: 0;
+        background-color: white;
+        width: 50vw;
+    }
+
+    li {
+        justify-content: center;
+    }
+}
 
 /*För stående smartphone*/
 
@@ -18,7 +631,7 @@
     }
 
     body {
-        background-image: url(images/kramas_blomma.jpg);
+        background-image: url(images/valv_tittar_symetrisk_cropped.jpg);
         background-attachment: fixed;
         background-position: center -150px;
         background-repeat: no-repeat;
@@ -32,15 +645,55 @@
         text-decoration: none;
     }
 
-    .banderoll {
-        width: 100vw auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
-        position: sticky;
-        top: 0;
+    .blomma {
+        position: absolute;
+        width: 50vw;
+        height: auto;
+        z-index: 0;
+    }
+
+    #blomma7 {
+        top: 220vh;
+        left: -70px;
+        transform: rotate(95deg);
+    }
+
+    #blomma6 {
+        top: -10vh;
+        left: -20px;
+        transform: rotate(50deg);
+        width: 35vw;
+    }
+
+    #blomma5 {
+        top: -7vh;
+        right: -15px;
+        transform: rotate(-55deg);
+        width: 35vw;
+    }
+
+    #blomma1 {
+        top: 50vh;
+        left: -70px;
+        transform: rotate(45deg);
+    }
+
+    #blomma2 {
+        top: 100vh;
+        right: -70px;
+        transform: rotate(-45deg);
+    }
+
+    #blomma3 {
+        top: 450vh;
+        right: -75px;
+        transform: rotate(-30deg);
+    }
+
+    #blomma4 {
+        top: 350vh;
+        left: -75px;
+        transform: rotate(30deg);
     }
 
     .content {
@@ -62,6 +715,7 @@
         top: 270px;
         width: 100vw auto;
         z-index: 0;
+        overflow: hidden;
     }
 
     .centrerad_text {
@@ -74,22 +728,13 @@
         text-align: left;
     }
 
-    .floating-img-l {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 140px;
-        height: auto;
-        z-index: 1;
-    }
-
-    .floating-img-r {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 140px;
-        height: auto;
-        z-index: 1;
+    .link_text {
+        margin: 0;
+        max-width: 70vw;
+        color: midnightblue;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .floating-img1 {
@@ -223,6 +868,7 @@
         text-align: center;
         align-items: center;
         text-decoration: none;
+        z-index: 2;
     }
 
     section {
@@ -419,21 +1065,8 @@
         margin: 0;
     }
 
-    .section_container {
-        background-color: rgb(255, 255, 255);
-        border-color: red;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        gap: 10px;
-        padding: 10px;
-        width: 90%;
-        text-align: center;
-        text-decoration: none;
-    }
-
     .side-menu {
-        background-color: white;
+        background: white;
         position: fixed;
         top: 0;
         left: -250px;
@@ -549,13 +1182,6 @@
 
     .popup input {
         width: 90%;
-    }
-
-    #whislist {
-        text-align: left;
-        border-radius: 5px;
-        width: 50vw;
-        position: relative;
     }
 
     .whishlist_img {
