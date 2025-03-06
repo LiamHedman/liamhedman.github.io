@@ -11,8 +11,14 @@ async function loadItems() {
     const list = document.getElementById("whishlist");
     list.innerHTML = `
     <p class="ocentrerad_text">
-    Observera att antal kan syfta på antal av förpackingar inehållande flera av ett förmål. Klicka på föremålet för att se detta.
-    <br><br>
+    <strong>OBS</strong>
+    <br>
+    Antal kan syfta på förpackingar, och inte enskilda föremål. Klicka på föremålet för att se detta.
+    <br>
+    <br>
+    Om du vill ge oss något från listan, reservera det då så att antalet updateras.
+    <br>
+    <br>
     </p>
     `;
 
