@@ -247,6 +247,7 @@
         text-decoration: none;
         padding: 0;
         margin-bottom: 0;
+        z-index: 2;
     }
 
     .section_block {
@@ -593,7 +594,8 @@
     .item {
         text-align: center;
         max-width: 40vw;
-        border-bottom: solid 1px;
+        border-top: solid 2px rgb(212, 162, 186);
+        border-bottom: solid 2px rgb(212, 162, 186);
     }
 
     #whishlist_section {
@@ -862,6 +864,7 @@
         text-decoration: none;
         padding: 0;
         margin-bottom: 0;
+        z-index: 2;
     }
 
     .section_block {
@@ -1209,6 +1212,8 @@
 
     .item {
         text-align: center;
+        border-top: solid 2px rgb(212, 162, 186);
+        border-bottom: solid 2px rgb(212, 162, 186);
     }
 
     #whishlist_section {
