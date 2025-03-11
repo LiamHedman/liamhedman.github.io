@@ -646,6 +646,7 @@
 
     #näsor {
         max-width: 80vw;
+        height: auto;
     }
 
     body {
