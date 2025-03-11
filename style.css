@@ -644,6 +644,10 @@
         text-decoration: none;
     }
 
+    #näsor {
+        max-width: 80vw;
+    }
+
     body {
         background-image: url(images/valv_tittar_symetrisk_cropped.jpg);
         background-attachment: fixed;
