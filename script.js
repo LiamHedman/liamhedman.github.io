@@ -22,12 +22,25 @@ async function loadItems() {
     </p>
     `;
 
-    const validItems = cachedItems.filter(item => item.name && item.quantity > 0);
-
-    validItems.forEach(item => {
+    const validItems = cachedItems.filter(item => item.name);
+    if (validItems.length === 0) {
         const listItem = document.createElement("div");
         listItem.className = "item";
         listItem.innerHTML = `
+        <br><br>
+        <p class="ocentrerad_text">
+        Önskelistan verkar vara tom för tillfället.
+        </p>
+        <br><br>
+        `;
+        list.appendChild(listItem);
+    }
+
+    validItems.forEach(item => {
+        if (item.quantity > 0) {
+            const listItem = document.createElement("div");
+            listItem.className = "item";
+            listItem.innerHTML = `
             <p class="ocentrerad_text">
             ${item.name} - Antal: ${item.quantity}
             </p>
@@ -37,9 +50,12 @@ async function loadItems() {
             <button class="reserve-button" onclick="openPopup(${item.id})">
             Reservera ${item.name}
             </button><br><br>
-        `;
-        list.appendChild(listItem);
+            `;
+            list.appendChild(listItem);
+        }
     });
+
+    return validItems;
 }
 
 // Reservera ett item
@@ -136,11 +152,9 @@ async function openPopup(itemID) {
 }
 
 async function changeReservation() {
-    await loadItems();
+    const validItems = (await loadItems()).filter(item => item.quantity < item.original_quantity);
     const overlay = document.getElementById("overlay");
     overlay.style.display = "block";
-
-    const validItems = cachedItems.filter(item => item.name && item.quantity > 0);
 
     const popup = document.getElementById("popup");
     popup.style.display = "Block";
@@ -293,7 +307,7 @@ function toggleMenu(opt) {
     if (window.innerWidth > 768 && opt == 1) {
         return;
     }
-    
+
     const overlay = document.getElementById("overlay");
     const menu = document.getElementById("sideMenu");
 
@@ -434,7 +448,7 @@ function getReservations(person_name, item_name) {
         if (typeof quant === "string") {
             quant = quant.replace(/[−]/g, "-").trim(); // Byt ut Unicode-minus och ta bort whitespace
         }
-    
+
         if (!isNaN(quant)) {
             totalReserved += parseInt(quant);
         }
