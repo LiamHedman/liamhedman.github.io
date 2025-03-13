@@ -5,6 +5,12 @@
 
 /*För webbläsare på dator*/
 
+.bibelcitat {
+    line-height: 1.2;
+    font-family: "MonteCarlo", cursive;
+    text-align: left;
+}
+
 @media (min-width: 769px) {
     .menu-button {
         display: none;
@@ -75,6 +81,11 @@
         max-width: 40vw;
         text-align: left;
     }
+
+    .bibelcitat {
+        font-size: 20px;
+    }
+    
 
     .link_text {
         margin: 0;
