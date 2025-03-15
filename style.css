@@ -811,13 +811,13 @@
 
     #osa_form.open {
         opacity: 100;
-        max-height: 200vw;
+        max-height: 500vh;
         padding: 15px;
     }
 
     #spex_form.open {
         opacity: 100;
-        max-height: 200vw;
+        max-height: 500vh;
         padding: 15px;
     }
 
