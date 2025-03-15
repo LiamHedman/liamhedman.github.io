@@ -1,5 +1,3 @@
 # Att göra
 
-- Fixa texten
-- Fixa sidans bilder
-- Fixa önskelistan
+- Allt är klart!
