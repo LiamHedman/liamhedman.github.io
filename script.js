@@ -403,6 +403,10 @@ window.addEventListener("load", function () {
             content.style.display = "block"; // Visa huvudinnehållet
         }, 500); // Matchar fade-tiden
     }, 500)
+
+    this.setTimeout(() => {
+        alert("Det finns 1 nytt meddelande till gäster under avsnittet HEM");
+    }, 600)
 });
 
 // För att stänga sidomenyn när användaren klickar utanför menyn
