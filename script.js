@@ -405,7 +405,7 @@ window.addEventListener("load", function () {
     }, 500)
 
     this.setTimeout(() => {
-        alert("Det finns 1 nytt meddelande till gäster under avsnittet HEM");
+        alert("Hej!\nDet finns 1 nytt meddelande till gäster under avsnittet HEM");
     }, 600)
 });
 
