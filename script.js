@@ -345,6 +345,7 @@ function hideMenu(menu) {
 }
 
 async function toggleWishlist() {
+    showPreloader();
     await loadItems();
 
     const whishlist = document.getElementById("whishlist_section");
@@ -385,6 +386,22 @@ function toggleForm(int) {
             s_form.classList.toggle('open'); // Lägg till/ta bort klassen "open"
         }, 200);
     }
+}
+
+function showPreloader() {
+    const preloader = document.getElementById("preloader");
+
+    preloader.style.backgroundColor = "rgba(0, 0, 0, 0)"
+    preloader.style.display = "flex";   // Gör synlig
+    preloader.style.opacity = "1";      // Full synlighet
+
+    // Dölj igen efter 1 sekund
+    setTimeout(() => {
+        preloader.style.opacity = "0";  // Fade-out
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500);  // Matchar fade-tiden
+    }, 500);
 }
 
 // Kör när sidan har laddats
