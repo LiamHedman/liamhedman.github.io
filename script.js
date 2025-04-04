@@ -421,9 +421,9 @@ window.addEventListener("load", function () {
         }, 500); // Matchar fade-tiden
     }, 500)
 
-    this.setTimeout(() => {
-        alert("Hej!\nDet finns 1 nytt meddelande till gäster under avsnittet HEM");
-    }, 600)
+    // this.setTimeout(() => {
+    //     alert("Hej!\nDet finns 1 nytt meddelande till gäster under avsnittet HEM");
+    // }, 600)
 });
 
 // För att stänga sidomenyn när användaren klickar utanför menyn
