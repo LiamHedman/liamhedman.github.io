@@ -11,15 +11,14 @@ Detta är github-repot för en hemsida med information för gästerna till Ella 
 Repot innehåller följande filer:
 
 - images: Bilder som används eller har använts på sidan.
-  - images/pink-flowers: Bilder på rosa blommor varav några används för att pynta sidan.
 
 - qrCodeFiles: Filer relaterade till skapandet av en QR-kod som leder till hemsidan, skrivet i python.
 
-- backlog.md
+- backlog.md: Projektets backlog
 
-- index.html: Den uvudsakliga hemsidan.
+- index.html: Hypertextstrukturen för uvudsakliga hemsidan.
 
-- style.css: Style för hemsidan.
+- style.css: Stildokumentet för hemsidan.
 
 - script.js: Funktionalitet.
 
@@ -28,3 +27,7 @@ Repot innehåller följande filer:
 #### Länkt till den publicerade hemsidan
 
 - <https://liamhedman.github.io>
+
+#### Länk till facebookevenemanget tillhörande dagen
+
+- <https://fb.me/e/38HJSreFF>
